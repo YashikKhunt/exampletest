@@ -28,7 +28,7 @@ public class Msg {
 //	}
 
     public void encrypt() throws GeneralSecurityException, BadPaddingException {
-        Cipher c = Cipher.getInstance("AES");
+Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding"); SecretKeySpec keySpec = new SecretKeySpec(key, "AES"); IvParameterSpec ivSpec = new IvParameterSpec(iv); c.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
     }
 
     public void encryptAlgFromVar() throws GeneralSecurityException, BadPaddingException {

@@ -52,9 +52,9 @@ public class test {
             try {
                 // Example with weak key size (short and predictable)
                 String weakKeyStr = "weakkey"; // too short
-                SecretKey weakSecretKey = new SecretKeySpec(weakKeyStr.getBytes(), "AES");
-
-                // Improper use of key and IV
+KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+keyGen.init(256);
+SecretKey secureSecretKey = keyGen.generateKey();
                 Cipher cipher3 = Cipher.getInstance("AES");
                 cipher3.init(Cipher.DECRYPT_MODE, weakSecretKey); // Incorrect key usage
                 byte[] decryptedText = cipher3.doFinal("someEncryptedData".getBytes());

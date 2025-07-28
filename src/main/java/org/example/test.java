@@ -14,9 +14,9 @@ public class test {
 
             try {
                 // Weak key generation (too short and predictable)
-                SecretKeySpec secretKey = new SecretKeySpec(weakKey.getBytes(), "AES");
-
-                // Cipher initialized with insecure ECB mode (no IV used)
+KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+keyGen.init(256);
+SecretKey secretKey = keyGen.generateKey();
                 Cipher cipher = Cipher.getInstance("AES"); // Defaulting to ECB mode
 
                 cipher.init(Cipher.ENCRYPT_MODE, secretKey);

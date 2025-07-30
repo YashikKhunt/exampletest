@@ -12,7 +12,7 @@ public class Main {
         public void correct() throws GeneralSecurityException {
             int keySize = 4096;
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-            RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(keySize, RSAKeyGenParameterSpec.F4);
+int keySize = 2048; RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(keySize, RSAKeyGenParameterSpec.F4);
             generator.initialize(parameters, new SecureRandom());
             KeyPair keyPair = generator.generateKeyPair();
         }

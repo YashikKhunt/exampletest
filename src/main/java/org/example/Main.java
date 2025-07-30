@@ -22,9 +22,9 @@ public class Main {
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
 RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(2048, RSAKeyGenParameterSpec.F4);
             generator.initialize(parameters, new SecureRandom());
-            KeyPair keyPair = generator.generateKeyPair();
-        }
-        public void correctBigInteger() throws GeneralSecurityException {
+KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
+generator.initialize(2048, SecureRandom.getInstanceStrong());
+KeyPair keyPair = generator.generateKeyPair();
             int keySize = 4096;
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
             RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(keySize, BigInteger.valueOf(65537));

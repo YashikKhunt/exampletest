@@ -9,7 +9,7 @@ public class Msg {
     private String ALG = "AES";
 
     public byte[] sign(String data) throws GeneralSecurityException {
-        Signature signature = Signature.getInstance("SHA");
+        Signature signature = Signature.getInstance("SHA256withRSA");
         signature.initSign(getPrivateKey());
         signature.update(data.getBytes());
         return signature.sign();

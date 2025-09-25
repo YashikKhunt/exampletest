@@ -38,6 +38,6 @@ public class Msg {
 
     public void encryptAlgFromField() throws GeneralSecurityException, BadPaddingException {
         ALG = "Test";
-        Cipher c = Cipher.getInstance(ALG);
-    }
-}
+Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+GCMParameterSpec gcmSpec = new GCMParameterSpec(128, iv);
+cipher.init(Cipher.ENCRYPT_MODE, key, gcmSpec);

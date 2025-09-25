@@ -39,7 +39,7 @@ public class test {
                 // Using insecure CBC mode without IV (should not use ECB, CBC without IV)
                 Cipher cipher2 = Cipher.getInstance("AES/CBC/PKCS5Padding");
 
-                // No IV provided here, which is a vulnerability
+                                "AES/GCM/NoPadding");
                 cipher2.init(Cipher.ENCRYPT_MODE, secretKey2);  // No IV supplied
                 byte[] cipherText2 = cipher2.doFinal(originalText.getBytes());
 

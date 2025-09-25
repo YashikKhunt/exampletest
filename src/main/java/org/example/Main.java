@@ -35,7 +35,7 @@ RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(2048, RSAKeyGenPa
             // Since 3.0.0: key size of 2048 is not allowed
             int keySize = 2048;
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-int keySize = 4096;
+            RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(keySize, 65537);
 BigInteger publicExponent = BigInteger.valueOf(65537);
 RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(keySize, publicExponent);
         }

@@ -20,7 +20,9 @@ public class Main {
             // Since 3.0.0: key size of 2048 is not allowed
             int keySize = 2048;
             KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
-RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(2048, RSAKeyGenParameterSpec.F4);
+int keySize = 4096;
+BigInteger publicExponent = BigInteger.valueOf(65537);
+RSAKeyGenParameterSpec parameters = new RSAKeyGenParameterSpec(keySize, publicExponent);
             generator.initialize(parameters, new SecureRandom());
             KeyPair keyPair = generator.generateKeyPair();
         }

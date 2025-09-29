@@ -6,7 +6,7 @@ import java.security.*;
 
 public class Msg {
 
-    private String ALG = "AES";
+    private String ALG = "AES/GCM/NoPadding";
 
     public byte[] sign(String data) throws GeneralSecurityException {
         Signature signature = Signature.getInstance("SHA");
